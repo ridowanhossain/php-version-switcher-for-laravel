@@ -20,10 +20,11 @@ Windows batch utility for managing multiple local PHP installations living under
 
 ## Getting Started
 
-1. Place `php-switcher.bat` in `D:\PHP`.
-2. Ensure each PHP build you want to manage lives in a versioned folder, e.g. `D:\PHP\php-7.4`.
-3. The active version should live in `D:\PHP\php` before you start using the switcher.
-4. Launch the script from PowerShell or Command Prompt:
+1. Download or clone this repository, then copy all included files and folders into `D:\PHP`.
+2. Place `php-switcher.bat` in `D:\PHP` (should already be covered if you copied everything).
+3. Ensure each PHP build you want to manage lives in a versioned folder, e.g. `D:\PHP\php-7.4`.
+4. The active version should live in `D:\PHP\php` before you start using the switcher.
+5. Launch the script from PowerShell or Command Prompt:
 
    ```powershell
    cd D:\PHP
