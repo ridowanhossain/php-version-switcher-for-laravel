@@ -18,6 +18,14 @@ Windows batch utility for managing multiple local PHP installations living under
 - PHP builds stored as `D:\PHP\php-<version>` directories.
 - Environment variable (system or user level) pointing to `D:\PHP\php` for your shell or IDE.
 
+## Add PHP to the Environment Variable
+
+1. Open Windows Search and type **Environment Variables**; choose **Edit the system environment variables**.
+2. In the **System Properties** window, click **Environment Variables…**.
+3. Under **System variables**, select `Path` and click **Edit**.
+4. Click **New**, enter `D:\PHP\php`, and confirm with **OK** on all dialogs.
+5. Restart any open terminals or IDEs so they pick up the updated PATH.
+
 ## Getting Started
 
 1. Download or clone this repository, then copy all included files and folders into `D:\PHP`.
@@ -30,14 +38,6 @@ Windows batch utility for managing multiple local PHP installations living under
    cd D:\PHP
    .\php-switcher.bat
    ```
-
-## Add PHP to the Environment Variable
-
-1. Open Windows Search and type **Environment Variables**; choose **Edit the system environment variables**.
-2. In the **System Properties** window, click **Environment Variables…**.
-3. Under **System variables**, select `Path` and click **Edit**.
-4. Click **New**, enter `D:\PHP\php`, and confirm with **OK** on all dialogs.
-5. Restart any open terminals or IDEs so they pick up the updated PATH.
 
 ## Usage
 
