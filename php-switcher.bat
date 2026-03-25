@@ -1,7 +1,8 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "BASE_DIR=D:\PHP"
+set "BASE_DIR=%~dp0"
+set "BASE_DIR=!BASE_DIR:~0,-1!"
 
 if not exist "%BASE_DIR%" (
     echo Base directory "%BASE_DIR%" was not found.
@@ -16,61 +17,76 @@ set "choice="
 set /p "choice=Enter your choice and press Enter: "
 
 if "%choice%"=="1" (
-    call :switch_version 5.6
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="2" (
-    call :switch_version 7.0
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="3" (
-    call :switch_version 7.1
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="4" (
-    call :switch_version 7.2
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="5" (
-    call :switch_version 7.3
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="6" (
-    call :switch_version 7.4
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="7" (
-    call :switch_version 8.0
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="8" (
-    call :switch_version 8.1
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="9" (
-    call :switch_version 8.2
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="10" (
-    call :uninstall_php
-    call :wait_and_return
-    goto :menu
-)
-if "%choice%"=="11" (
     call :show_current_version
     call :wait_and_return
     goto :menu
 )
-if "%choice%"=="12" goto :exit
+if "%choice%"=="2" (
+    call :uninstall_php
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="3" (
+    call :switch_version 5.6
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="4" (
+    call :switch_version 7.0
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="5" (
+    call :switch_version 7.1
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="6" (
+    call :switch_version 7.2
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="7" (
+    call :switch_version 7.3
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="8" (
+    call :switch_version 7.4
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="9" (
+    call :switch_version 8.0
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="10" (
+    call :switch_version 8.1
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="11" (
+    call :switch_version 8.2
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="12" (
+    call :switch_version 8.3
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="13" (
+    call :switch_version 8.4
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="14" (
+    call :switch_version 8.5
+    call :wait_and_return
+    goto :menu
+)
+if "%choice%"=="15" goto :exit
 
 echo Invalid selection. Please try again.
 call :wait_and_return
@@ -100,25 +116,31 @@ echo ==========================================
 echo.
 echo.
 echo Current Status: Ready to switch PHP versions
-echo Current PHP version: !MENU_VERSION_MSG!  [Active folder: D:\PHP\php]
+echo Current PHP version: !MENU_VERSION_MSG!  [Active folder: !BASE_DIR!\php]
 echo.
 echo.
-echo 1. Switch to PHP 5.6           2. Switch to PHP 7.0
+echo 1. Check PHP Version           2. Uninstall PHP
 echo.
 echo.
-echo 3. Switch to PHP 7.1           4. Switch to PHP 7.2
+echo 3. Switch to PHP 5.6           4. Switch to PHP 7.0
 echo.
 echo.
-echo 5. Switch to PHP 7.3           6. Switch to PHP 7.4
+echo 5. Switch to PHP 7.1           6. Switch to PHP 7.2
 echo.
 echo.
-echo 7. Switch to PHP 8.0           8. Switch to PHP 8.1
+echo 7. Switch to PHP 7.3           8. Switch to PHP 7.4
 echo.
 echo.
-echo 9. Switch to PHP 8.2           10. Uninstall PHP
+echo 9. Switch to PHP 8.0           10. Switch to PHP 8.1
 echo.
 echo.
-echo 11. Check PHP Version          12. Exit
+echo 11. Switch to PHP 8.2          12. Switch to PHP 8.3
+echo.
+echo.
+echo 13. Switch to PHP 8.4          14. Switch to PHP 8.5
+echo.
+echo.
+echo 15. Exit
 echo.
 goto :EOF
 
