@@ -6,8 +6,15 @@ A simple Windows batch utility for managing multiple local PHP installations. Ea
 
 ## Getting Started
 
-1. Copy all your PHP builds into versioned folders (e.g., `php-5.6`, `php-8.4`) in the same directory as `php-switcher.bat`.
-2. Add the active `php` directory to your Windows Environment Variables (`PATH`).
+1. Copy all your PHP builds into versioned folders (e.g., `php-5.6`, `php-8.4`) in the same directory as `php-switcher.bat` (e.g., `D:\PHP`).
+2. Add the active PHP directory to your Windows Environment Variables (`PATH`):
+   - Open Windows Search and type **Environment Variables**, then choose **Edit the system environment variables**.
+   - In the **System Properties** window, click **Environment Variables**.
+   - Under **System variables** (or User variables), select `Path` and click **Edit**.
+   - Click **New** and enter `D:\PHP\php\`, then confirm with **OK** on all dialogs.
+   
+   ![Environment Variables](./environment.png)
+
 3. Launch the script via command prompt or by double-clicking it:
 
 ```powershell
